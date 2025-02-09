@@ -1,0 +1,7 @@
+aposta
+  tipo_aposta
+    jogador
+  valor
+    1000
+
+
