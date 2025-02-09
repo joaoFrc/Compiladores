@@ -30,6 +30,8 @@ class Parser:
             return self.aposta()
         elif token == "mao":
             return self.mao()
+        elif token in ["jogador1", "jogador2"]:
+            return self.acao()
         elif token == "resultado":
             return self.resultado()
         else:
@@ -46,7 +48,7 @@ class Parser:
             raise SyntaxError("Fim inesperado da entrada")
         
         token = self.tokens[self.pos]
-        if token in ["jogador", "banqueiro", "empate"]:
+        if token in ["jogador1", "jogador2", "empate"]:
             self.pos += 1
             return Node("tipo_aposta", [Node(token)])
         else:
@@ -67,7 +69,9 @@ class Parser:
         self.pos += 1  # Consome 'mao'
         carta1 = self.carta()
         carta2 = self.carta()
-        return Node("mao", [carta1, carta2])
+        carta3 = self.carta()
+        carta4 = self.carta()
+        return Node("mao", [carta1, carta2, carta3, carta4])
 
     def carta(self):
         if self.pos >= len(self.tokens):
@@ -79,6 +83,23 @@ class Parser:
             return Node("carta", [Node(token)])
         else:
             raise SyntaxError(f"Carta inválida: {token}")
+
+    def acao(self):
+        jogador = self.tokens[self.pos]
+        self.pos += 1  # Consome 'jogador1' ou 'jogador2'
+        decisao = self.decisao()
+        return Node("acao", [Node(jogador), decisao])
+
+    def decisao(self):
+        if self.pos >= len(self.tokens):
+            raise SyntaxError("Fim inesperado da entrada")
+        
+        token = self.tokens[self.pos]
+        if token in ["manter", "pegar"]:
+            self.pos += 1
+            return Node("decisao", [Node(token)])
+        else:
+            raise SyntaxError(f"Decisão inválida: {token}")
 
     def resultado(self):
         self.pos += 1  # Consome 'resultado'

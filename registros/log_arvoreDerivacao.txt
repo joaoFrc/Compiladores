@@ -5,3 +5,117 @@ aposta
     1000
 
 
+COMANDO
+  aposta
+    tipo_aposta
+      jogador1
+    valor
+      100
+
+
+COMANDO
+  aposta
+    tipo_aposta
+      jogador1
+    valor
+      100
+  acao
+    jogador1
+    decisao
+      pegar
+
+
+COMANDO
+  aposta
+    tipo_aposta
+      jogador1
+    valor
+      100
+  acao
+    jogador1
+    decisao
+      pegar
+  resultado
+
+
+COMANDO
+  aposta
+    tipo_aposta
+      jogador1
+    valor
+      100
+
+
+COMANDO
+  aposta
+    tipo_aposta
+      jogador1
+    valor
+      100
+  aposta
+    tipo_aposta
+      jogador2
+    valor
+      100
+
+
+COMANDO
+  aposta
+    tipo_aposta
+      jogador1
+    valor
+      100
+  aposta
+    tipo_aposta
+      jogador2
+    valor
+      100
+  acao
+    jogador1
+    decisao
+      pegar
+
+
+COMANDO
+  aposta
+    tipo_aposta
+      jogador1
+    valor
+      100
+  aposta
+    tipo_aposta
+      jogador2
+    valor
+      100
+  acao
+    jogador1
+    decisao
+      pegar
+  acao
+    jogador2
+    decisao
+      pegar
+
+
+COMANDO
+  aposta
+    tipo_aposta
+      jogador1
+    valor
+      100
+  aposta
+    tipo_aposta
+      jogador2
+    valor
+      100
+  acao
+    jogador1
+    decisao
+      pegar
+  acao
+    jogador2
+    decisao
+      pegar
+  resultado
+
+
